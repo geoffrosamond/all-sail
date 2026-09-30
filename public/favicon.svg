@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Allsail">
+  <rect width="32" height="32" rx="7" fill="#0B2430"/>
+  <path fill="#F7F3EC" d="M15 5v21h13Z"/>
+  <path fill="#D45A42" d="M14 11v15H5Z"/>
+</svg>
