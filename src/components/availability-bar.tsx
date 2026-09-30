@@ -21,20 +21,20 @@ export function AvailabilityBar({ value, onChange, onSubmit }: Props) {
   return (
     <section className="bg-ink text-paper" aria-label="Availability">
       <form
-        className="mx-auto grid max-w-6xl gap-4 px-4 py-5 sm:px-6 lg:grid-cols-[1fr_auto] lg:items-end"
+        className="mx-auto grid max-w-6xl min-w-0 gap-4 px-4 py-5 sm:px-6 lg:grid-cols-[1fr_auto] lg:items-end"
         onSubmit={(e) => {
           e.preventDefault();
           onSubmit();
         }}
       >
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <label className="block">
+        <div className="grid min-w-0 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <label className="block min-w-0">
             <span className="mb-2 block text-xs tracking-[0.14em] text-paper/60">Date</span>
             <input
               type="date"
               value={value.date}
               onChange={(e) => patch({ date: e.target.value })}
-              className="h-12 w-full rounded-sm border border-paper/15 bg-surface-dark px-3 text-sm text-paper outline-none"
+              className="date-field h-12 w-full min-w-0 max-w-full rounded-sm border border-paper/15 bg-surface-dark px-3 text-sm text-paper outline-none"
             />
           </label>
           <fieldset className="min-w-0">

@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 import { AvailabilityBar, type AvailabilityState } from "@/components/availability-bar";
 import { EnquirySheet } from "@/components/enquiry-sheet";
 import { FooterPanels } from "@/components/footer-panels";
@@ -180,45 +180,46 @@ function Home() {
 
       <section id="holidays" className="scroll-mt-24 px-4 py-20 sm:px-6">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.4fr_0.8fr]">
-          <article className="relative min-h-[28rem] overflow-hidden rounded-lg">
+          <Link to="/brochure" className="group relative min-h-[28rem] overflow-hidden rounded-lg">
             <img
-              src="/images/holidays-corfu.jpg"
-              alt="Yacht in a turquoise Ionian cove near Corfu"
-              className="absolute inset-0 size-full object-cover"
+              src="/brochure/ports/sea.jpg"
+              alt="Star Flyer at sea"
+              className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/25 to-transparent" />
             <div className="relative flex h-full min-h-[28rem] flex-col justify-end p-7 text-paper">
-              <p className="text-xs tracking-[0.18em] text-gold">Holidays</p>
-              <h2 className="mt-2 font-display text-4xl font-medium sm:text-5xl">Corfu, 10–20 June 2026</h2>
+              <p className="text-xs tracking-[0.18em] text-gold">Holidays · 22 April – 1 May 2027</p>
+              <h2 className="mt-2 font-display text-4xl font-medium sm:text-5xl">Sicily & Greece.</h2>
               <p className="mt-3 max-w-md text-base leading-relaxed text-paper/85">
-                A resort week that becomes an Ionian cruise. Same people, warmer water.
+                A hosted voyage with Russell and Cherie. Three nights in Valletta, then Star Flyer to Athens.
               </p>
-              <button
-                type="button"
-                onClick={openDesk}
-                className="mt-6 h-12 w-fit rounded-md bg-coral px-6 text-sm font-medium text-paper"
-              >
+              <span className="mt-6 flex h-12 w-fit items-center rounded-md bg-coral px-6 text-sm font-medium text-paper">
+                Open the sheet
+              </span>
+            </div>
+          </Link>
+          <div className="grid gap-6">
+            <article className="rounded-lg bg-paper p-6">
+              <p className="text-xs tracking-[0.16em] text-ink-muted">Still on the books</p>
+              <h3 className="mt-2 font-display text-3xl font-medium">Corfu, 10–20 June 2026</h3>
+              <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                A resort week that becomes an Ionian cruise.
+              </p>
+              <button type="button" onClick={openDesk} className="mt-5 h-11 rounded-md border border-mist px-4 text-sm">
                 Ask about Corfu
               </button>
-            </div>
-          </article>
-          <article className="overflow-hidden rounded-lg bg-foam">
-            <img src="/images/powerboat.jpg" alt="Polycraft powerboat on Pittwater" className="aspect-[3/2] w-full object-cover" />
-            <div className="p-6">
-              <p className="text-xs tracking-[0.16em] text-ink-muted">Under power</p>
-              <h3 className="mt-2 font-display text-3xl font-medium">Polycraft membership</h3>
-              <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-                A centre-console for the days you want the bays without the sails. NSW licence required.
-              </p>
-              <button
-                type="button"
-                onClick={openDesk}
-                className="mt-6 h-11 rounded-md border border-mist px-4 text-sm"
-              >
-                Enquire
-              </button>
-            </div>
-          </article>
+            </article>
+            <article className="overflow-hidden rounded-lg bg-foam">
+              <img src="/images/powerboat.jpg" alt="Polycraft powerboat on Pittwater" className="aspect-[3/2] w-full object-cover" />
+              <div className="p-6">
+                <p className="text-xs tracking-[0.16em] text-ink-muted">Under power</p>
+                <h3 className="mt-2 font-display text-3xl font-medium">Polycraft membership</h3>
+                <button type="button" onClick={openDesk} className="mt-5 h-11 rounded-md border border-mist px-4 text-sm">
+                  Enquire
+                </button>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
